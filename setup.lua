@@ -4,7 +4,7 @@
 local files
 local folders
 local cId = os.getComputerID()
-local cLabel = os.getComputerLabel
+local cLabel = os.getComputerLabel()
 local git = "https://raw.githubusercontent.com/TheShadowBudgie/cctweaked-scripts/refs/heads/main"
 local allFolders = {
 	["BloodMagic"] = { 
