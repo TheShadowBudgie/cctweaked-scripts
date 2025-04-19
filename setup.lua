@@ -1,4 +1,29 @@
 -----------------------------------------------------------------------------
+--                                 Variables                               --
+-----------------------------------------------------------------------------
+local files
+local folders
+local cId = os.getComputerID()
+local cLabel = os.getComputerLabel
+local git = "https://raw.githubusercontent.com/TheShadowBudgie/cctweaked-scripts/refs/heads/main"
+local allFolders = {
+	["BloodMagic"] = { 
+		name = "BloodMagic",
+		files = {
+            --"File.lua",
+			"SlateAutomation.lua",
+		}
+	},
+	["EnderIO"] = { 
+		name = "EnderIO",
+		files = {
+			--"ExampleFile.lua",
+			"grainsofinfinity.lua",
+		}
+	},
+}
+
+-----------------------------------------------------------------------------
 --                                 Functions                               --
 -----------------------------------------------------------------------------
 local function saveFile(filePath, fileData)
@@ -20,48 +45,20 @@ local function downloadFile(filePath)
 	local fileData = file.readAll()
 	return fileData
 end
+
 -----------------------------------------------------------------------------
---                                 Variables                               --
+--                                 Code		                               --
 -----------------------------------------------------------------------------
-CId = os.getComputerID()
-CLabel = os.getComputerLabel
-
-
-
-if (CLabel == nil) then
-    if (CId < 9) then
-        CLabel = "shadow-pc-00" .. CId
-    elseif (CId < 99) then
-        CLabel = "shadow-pc-0" .. CId
+if (cLabel == nil) then
+    if (cId < 9) then
+        cLabel = "shadow-pc-00" .. cId
+    elseif (cId < 99) then
+        cLabel = "shadow-pc-0" .. cId
     else
-        CLabel = "shadow-pc-" .. CId
+        cLabel = "shadow-pc-" .. cId
     end
-    os.setComputerLabel(CLabel)
+    os.setComputerLabel(cLabel)
 end
-
--- installation using github for the host computer
-
-local git = "https://raw.githubusercontent.com/TheShadowBudgie/cctweaked-scripts/refs/heads/main"
-
-
-local files, folders
-
-local allFolders = {
-	["BloodMagic"] = { 
-		name = "BloodMagic",
-		files = {
-            --"File.lua",
-			"SlateAutomation.lua",
-		}
-	},
-	["EnderIO"] = { 
-		name = "EnderIO",
-		files = {
-			--"ExampleFile.lua",
-			"grainsofinfinity.lua",
-		}
-	},
-}
 
 if not (turtle) then
     	-- host computer
