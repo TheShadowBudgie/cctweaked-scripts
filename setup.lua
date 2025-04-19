@@ -65,7 +65,7 @@ end
 if not (turtle) then
     	-- host computer
 	files = {
-		--"startup.lua"
+		"startup.lua"
 	}
 	folders = allFolders
 else
