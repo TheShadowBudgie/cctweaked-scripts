@@ -50,7 +50,7 @@ end
 --                                 Code		                               --
 -----------------------------------------------------------------------------
 if (cLabel == nil) then
-    if (cId < 9) then
+    if (cId <= 9) then
         cLabel = "shadow-pc-00" .. cId
     elseif (cId <= 99) then
         cLabel = "shadow-pc-0" .. cId
@@ -65,7 +65,7 @@ end
 if not (turtle) then
     	-- host computer
 	files = {
-		"startup.lua"
+		"startup.lua",
 	}
 	folders = allFolders
 else
