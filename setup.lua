@@ -52,13 +52,15 @@ end
 if (cLabel == nil) then
     if (cId < 9) then
         cLabel = "shadow-pc-00" .. cId
-    elseif (cId < 99) then
+    elseif (cId <= 99) then
         cLabel = "shadow-pc-0" .. cId
     else
         cLabel = "shadow-pc-" .. cId
     end
     os.setComputerLabel(cLabel)
 end
+
+
 
 if not (turtle) then
     	-- host computer
@@ -120,6 +122,6 @@ for _,fileName in pairs(files) do
 	local data = downloadFile(fileName)
 	saveFile(fileName, data)
 end
-
+shell.run("wget run https://raw.githubusercontent.com/Pyroxenium/Basalt2/main/install.lua -r")
 
 os.reboot()
